@@ -1,0 +1,7 @@
+C:\Users\Monny\source\repos\Lab12 - changed\Lab12 - changed\obj\Debug\Lab12 - changed.csproj.CoreCompileInputs.cache
+C:\Users\Monny\source\repos\Lab12 - changed\Lab12 - changed\bin\Debug\Lab12 - changed.exe.config
+C:\Users\Monny\source\repos\Lab12 - changed\Lab12 - changed\bin\Debug\Lab12 - changed.exe
+C:\Users\Monny\source\repos\Lab12 - changed\Lab12 - changed\bin\Debug\Lab12 - changed.pdb
+C:\Users\Monny\source\repos\Lab12 - changed\Lab12 - changed\obj\Debug\Lab12 - changed.exe
+C:\Users\Monny\source\repos\Lab12 - changed\Lab12 - changed\obj\Debug\Lab12 - changed.pdb
+C:\Users\Monny\source\repos\Lab12 - changed\Lab12 - changed\obj\Debug\Lab12 - changed.csprojAssemblyReference.cache
