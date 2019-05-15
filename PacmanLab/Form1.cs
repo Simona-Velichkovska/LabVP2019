@@ -20,6 +20,7 @@ namespace PacmanLab
         Obstacle[] obstacles = new Obstacle[8];
         Image foodImage;
         bool[][] foodWorld;
+       
         public Form1()
         {
             InitializeComponent();
@@ -51,6 +52,8 @@ namespace PacmanLab
             timer.Interval = TIMER_INTERVAL;
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
+            
+
         }
         public void initiateObstacles()
         {
@@ -69,7 +72,33 @@ namespace PacmanLab
         private void timer_Tick(object sender, EventArgs e)
         {
             // овде вашиот код
-            
+            for (int i = 0; i < 8; i++)
+            {
+                if (obstacles[i].X == (pacman.X + 1) && obstacles[i].Y == (pacman.Y) && pacman.direction == Pacman.DIRECTION.desno||
+                    obstacles[i].X == (pacman.X + 1) && obstacles[i].Y+1 == (pacman.Y) && pacman.direction == Pacman.DIRECTION.desno||
+                    obstacles[i].X == (pacman.X + 1) && obstacles[i].Y+2 == (pacman.Y) && pacman.direction == Pacman.DIRECTION.desno)
+                {
+                    pacman.ChangeDirection(Pacman.DIRECTION.levo);
+                }else if(obstacles[i].X == (pacman.X-1) && obstacles[i].Y == (pacman.Y) && pacman.direction == Pacman.DIRECTION.levo
+                    || obstacles[i].X == (pacman.X - 1) && obstacles[i].Y+1 == (pacman.Y) && pacman.direction == Pacman.DIRECTION.levo ||
+                    obstacles[i].X == (pacman.X - 1) && obstacles[i].Y+2 == (pacman.Y) && pacman.direction == Pacman.DIRECTION.levo)
+                {
+                    pacman.ChangeDirection(Pacman.DIRECTION.desno);
+                }else if(obstacles[i].X == (pacman.X) && obstacles[i].Y == (pacman.Y-1) && pacman.direction == Pacman.DIRECTION.gore
+                    || obstacles[i].X == (pacman.X) && obstacles[i].Y + 1 == (pacman.Y-1) && pacman.direction == Pacman.DIRECTION.gore ||
+                    obstacles[i].X == (pacman.X) && obstacles[i].Y + 2 == (pacman.Y-1) && pacman.direction == Pacman.DIRECTION.gore)
+                {
+                    pacman.ChangeDirection(Pacman.DIRECTION.dole);
+                }
+                else if (obstacles[i].X == (pacman.X) && obstacles[i].Y == (pacman.Y+1) && pacman.direction == Pacman.DIRECTION.dole
+                    || obstacles[i].X == (pacman.X) && obstacles[i].Y + 1 == (pacman.Y+1) && pacman.direction == Pacman.DIRECTION.dole ||
+                    obstacles[i].X == (pacman.X) && obstacles[i].Y + 2 == (pacman.Y+1) && pacman.direction == Pacman.DIRECTION.dole)
+                {
+                    pacman.ChangeDirection(Pacman.DIRECTION.gore);
+                }
+
+
+            }
             for (int i = 0; i < WORLD_WIDTH; i++)
             {
                 for (int j = 0; j < WORLD_HEIGHT; j++)
@@ -82,8 +111,8 @@ namespace PacmanLab
             
             }
             
-            
             pacman.Move(WORLD_WIDTH, WORLD_HEIGHT);
+            
             Invalidate();
         }
 
@@ -92,7 +121,7 @@ namespace PacmanLab
             Graphics g = e.Graphics;
             g.Clear(Color.White);
             int points =-150;
-            int progress = 0;
+            int progress = -22;
             for (int i = 0; i < foodWorld.Length; i++)
             {
                

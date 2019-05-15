@@ -12,7 +12,7 @@ namespace PacmanLab
         public int X{get;set;}
         public int Y { get; set; }
         public enum DIRECTION { levo,desno,gore,dole};
-        DIRECTION direction;
+        public DIRECTION direction { get; set; }
         public static int RADIUS = 20;
         public int Speed { get; set; }
         public bool MouthOpen = false;
@@ -26,13 +26,6 @@ namespace PacmanLab
             Y = 5;
             Speed = RADIUS;
             direction = DIRECTION.desno;
-            
-        }
-        public void stop(int x,int y)
-        {
-            Speed = 0;
-            X = x;
-            Y = y;
         }
 
         public void ChangeDirection(DIRECTION dir) {
@@ -70,6 +63,7 @@ namespace PacmanLab
                 }
                 else { Y--; }
             }
+
            
 
         }
